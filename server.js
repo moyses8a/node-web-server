@@ -22,9 +22,9 @@ app.use((req,res,next) => {
     next();
 });
 
-app.use((req,res,next) => {
-    res.render("maintenance.hbs")
-});
+// app.use((req,res,next) => {
+//     res.render("maintenance.hbs")
+// });
 
 hbs.registerHelper("currentYear", () => {
     return new Date().getFullYear();
@@ -36,6 +36,12 @@ app.get("/",(req,res) => {
     res.render("home",{
         name:"Moisés Ochoa",
         pageTitle:"Home"
+    });
+});
+
+app.get("/help", (req, res) => {
+    res.render("proyects.hbs",{
+        pageTitle: 'Proyects'
     });
 });
 
